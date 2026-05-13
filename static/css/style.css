@@ -102,8 +102,8 @@ main {
 .hero {
   position: relative;
   background:
-    linear-gradient(rgba(42, 37, 32, 0.55), rgba(42, 37, 32, 0.55)),
-    linear-gradient(135deg, #8b3a2b 0%, #c8932e 50%, #6a2a1d 100%);
+    linear-gradient(rgba(10, 20, 40, 0.50), rgba(10, 20, 40, 0.50)),
+    linear-gradient(135deg, #1a3a6b 0%, #2d7dd2 50%, #0f2444 100%);
   color: white;
   border-radius: 8px;
   margin-bottom: 3rem;
@@ -113,7 +113,7 @@ main {
   padding: 4rem 1.5rem;
   text-align: center;
 }
-.hero .eyebrow { color: #f3d896; }
+.hero .eyebrow { color: #93c5fd; }
 .hero h1 {
   font-size: 2.8rem;
   margin: 0.25rem 0 0.6rem;
@@ -206,6 +206,20 @@ main > section > h2 {
 }
 .card-image-market::after {
   content: "🥬";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  opacity: 0.5;
+}
+.card-image-brewery {
+  background: linear-gradient(135deg, #1a3a6b 0%, #2d5a9e 60%, #3d7abf 100%);
+  position: relative;
+}
+.card-image-brewery::after {
+  content: "🍺";
   position: absolute;
   inset: 0;
   display: flex;
