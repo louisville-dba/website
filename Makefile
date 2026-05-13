@@ -1,7 +1,7 @@
 .PHONY: help install install-hugo serve build clean new-post check
 
 # Hugo version & install location
-HUGO_VERSION ?= 0.139.3
+HUGO_VERSION ?= 0.161.1
 HUGO_BIN_DIR ?= $(HOME)/.local/bin
 HUGO := $(shell command -v hugo 2>/dev/null || echo $(HUGO_BIN_DIR)/hugo)
 
