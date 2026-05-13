@@ -1,0 +1,88 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Welcome to</p>
+    <h1>{{ .Site.Params.tagline }}</h1>
+    <p class="hero-sub">{{ .Site.Params.subtitle }}</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="/events/">See what's happening</a>
+      <a class="btn btn-secondary" href="/eat/">Find a place to eat</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured">
+  <h2>Featured this month</h2>
+  <div class="card-grid card-grid-2">
+    <article class="card card-feature">
+      <div class="card-image card-image-fondue"></div>
+      <div class="card-body">
+        <p class="card-eyebrow">Featured Business</p>
+        <h3><a href="/eat/the-melting-pot/">The Melting Pot</a></h3>
+        <p>Special-occasion fondue in the heart of downtown. Now taking Mother's Day reservations.</p>
+      </div>
+    </article>
+    <article class="card card-feature">
+      <div class="card-image card-image-market"></div>
+      <div class="card-body">
+        <p class="card-eyebrow">Saturdays · May–October</p>
+        <h3><a href="/events/farmers-market-may-16/">Louisville Farmers Market</a></h3>
+        <p>Gather with the community, support local agriculture and small businesses, enjoy live music, and find fresh food.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="categories">
+  <h2>Explore downtown</h2>
+  <div class="card-grid card-grid-3">
+    <a class="cat-card" href="/eat/">
+      <h3>Places to Eat</h3>
+      <p>Cafés, bakeries, sandwich shops, and special-occasion dining.</p>
+    </a>
+    <a class="cat-card" href="/shop/">
+      <h3>Places to Shop</h3>
+      <p>Independent boutiques, bookstores, and specialty retail.</p>
+    </a>
+    <a class="cat-card" href="/do/">
+      <h3>Things to Do</h3>
+      <p>Parks, museums, theater, and live music venues.</p>
+    </a>
+  </div>
+</section>
+
+<section class="upcoming">
+  <h2>Happening Downtown</h2>
+  <ul class="event-list">
+    {{ range first 4 (where .Site.RegularPages "Section" "events").ByDate }}
+      <li class="event-row">
+        <div class="event-row-date">
+          {{ with .Date }}
+            <span class="event-month">{{ .Format "Jan" }}</span>
+            <span class="event-day">{{ .Format "2" }}</span>
+          {{ end }}
+        </div>
+        <div class="event-row-body">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ with .Params.location }}<p class="muted">{{ . }}</p>{{ end }}
+          <p>{{ .Summary | plainify }}</p>
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+  <p class="more"><a href="/events/">All events →</a></p>
+</section>
+
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <div>
+      <h2>Downtown Dialogue</h2>
+      <p>Our monthly newsletter — events, new businesses, and what's coming up.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+      <input type="email" placeholder="your@email.com" aria-label="Email address" required>
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+{{ end }}

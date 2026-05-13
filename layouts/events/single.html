@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article>
+  <h2>{{ .Title }}</h2>
+  <p class="event-meta">
+    {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "Monday, January 2, 2006" }}</time>{{ end }}
+    {{ with .Params.location }} · {{ . }}{{ end }}
+    {{ with .Params.speaker }} · {{ . }}{{ end }}
+  </p>
+  <div>
+    {{ .Content }}
+  </div>
+  <p><a href="/events/">← All events</a></p>
+</article>
+{{ end }}

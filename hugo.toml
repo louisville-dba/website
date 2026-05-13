@@ -1,0 +1,36 @@
+baseURL = "https://louisvilledba.org/"
+languageCode = "en-us"
+title = "Historic Downtown Louisville"
+buildFuture = true
+summaryLength = 30
+
+[params]
+  description = "The Louisville Downtown Business Association — supporting local shops, restaurants, and events in historic downtown Louisville."
+  tagline = "Historic Downtown Louisville"
+  subtitle = "Shop, dine, and explore the heart of our city."
+
+[menu]
+  [[menu.main]]
+    name = "Places to Eat"
+    url = "/eat/"
+    weight = 1
+  [[menu.main]]
+    name = "Places to Shop"
+    url = "/shop/"
+    weight = 2
+  [[menu.main]]
+    name = "Things to Do"
+    url = "/do/"
+    weight = 3
+  [[menu.main]]
+    name = "Events"
+    url = "/events/"
+    weight = 4
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 6

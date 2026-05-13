@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="{{ .Site.BaseURL }}">
+        <span class="brand-mark">L</span>
+        <span class="brand-name">{{ .Site.Title }}</span>
+      </a>
+      <nav>
+        {{ range .Site.Menus.main }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </nav>
+    </div>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>
+        <strong>Louisville Downtown Business Association</strong><br>
+        749 Main Street, Suite 200 · Louisville, KY 40202
+      </div>
+      <div>
+        info@louisvilledba.org · (502) 555-0148<br>
+        <small>&copy; {{ now.Year }} Louisville DBA. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

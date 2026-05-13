@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="page-section">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul class="event-list">
+    {{ range .Pages.ByDate }}
+      <li class="event-row">
+        <div class="event-row-date">
+          {{ with .Date }}
+            <span class="event-month">{{ .Format "Jan" }}</span>
+            <span class="event-day">{{ .Format "2" }}</span>
+          {{ end }}
+        </div>
+        <div class="event-row-body">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ with .Params.location }}<p class="muted">{{ . }}</p>{{ end }}
+          <p>{{ .Summary | plainify }}</p>
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="page-section single">
+  {{ with .Params.category }}<p class="eyebrow">{{ . }}</p>{{ end }}
+  <h1>{{ .Title }}</h1>
+  <dl class="meta">
+    {{ with .Params.address }}<dt>Address</dt><dd>{{ . }}</dd>{{ end }}
+    {{ with .Params.phone }}<dt>Phone</dt><dd>{{ . }}</dd>{{ end }}
+    {{ with .Params.hours }}<dt>Hours</dt><dd>{{ . }}</dd>{{ end }}
+    {{ with .Params.location }}<dt>Location</dt><dd>{{ . }}</dd>{{ end }}
+    {{ if .Date.IsZero | not }}{{ if eq .Section "events" }}<dt>Date</dt><dd>{{ .Date.Format "Monday, January 2, 2006" }}</dd>{{ end }}{{ end }}
+  </dl>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  <p><a href="/{{ .Section }}/">← Back to {{ humanize .Section }}</a></p>
+</article>
+{{ end }}
