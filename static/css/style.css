@@ -102,8 +102,8 @@ main {
 .hero {
   position: relative;
   background:
-    linear-gradient(rgba(10, 20, 40, 0.50), rgba(10, 20, 40, 0.50)),
-    linear-gradient(135deg, #1a3a6b 0%, #2d7dd2 50%, #0f2444 100%);
+    linear-gradient(rgba(10, 30, 20, 0.50), rgba(10, 30, 20, 0.50)),
+    linear-gradient(135deg, #1a5c3a 0%, #2d9e5e 50%, #0f3a24 100%);
   color: white;
   border-radius: 8px;
   margin-bottom: 3rem;
@@ -113,7 +113,7 @@ main {
   padding: 4rem 1.5rem;
   text-align: center;
 }
-.hero .eyebrow { color: #93c5fd; }
+.hero .eyebrow { color: #86efac; }
 .hero h1 {
   font-size: 2.8rem;
   margin: 0.25rem 0 0.6rem;
@@ -220,6 +220,20 @@ main > section > h2 {
 }
 .card-image-brewery::after {
   content: "🍺";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  opacity: 0.5;
+}
+.card-image-office {
+  background: linear-gradient(135deg, #4a3f6b 0%, #7c6faa 60%, #a394d4 100%);
+  position: relative;
+}
+.card-image-office::after {
+  content: "🏢";
   position: absolute;
   inset: 0;
   display: flex;
